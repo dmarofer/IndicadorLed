@@ -1,6 +1,6 @@
 # IndicadorLed
 
-Libreria para controlar un led y un buzzer en 2 pines.
+## Libreria para controlar un led y un buzzer en 2 pines.
 
 Sobrecarga de constructor para objeto solo LED o LED + BUZZER
 
