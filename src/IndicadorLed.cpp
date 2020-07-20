@@ -226,3 +226,33 @@ void IndicadorLed::RunFast(){
 
 
 }
+
+
+#ifdef ESP32
+
+        void IndicadorLed::tone(uint8_t pin, unsigned int frequency, unsigned long duration){
+
+
+            if (ledcRead(TONE_CHANNEL)) {
+                // El canal esta en uso
+                return;
+            }
+
+            ledcAttachPin(pin, TONE_CHANNEL);
+            ledcWriteTone(TONE_CHANNEL, frequency);
+
+            if (duration) {
+                delay(duration);
+                noTone(pin);
+            }    
+
+        }
+        
+        void IndicadorLed::noTone(uint8_t pin){
+
+            ledcDetachPin(pin);
+            ledcWrite(TONE_CHANNEL, 0);
+
+        }
+
+#endif

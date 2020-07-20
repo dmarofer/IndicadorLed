@@ -89,6 +89,13 @@ public:
     // Funcion a ejecutar en el LOOP o en una TASK
     void RunFast();
 
+    // El ESP32 no tiene las funciones tone y notone en el framework Arduino
+    #ifdef ESP32
+        #define TONE_CHANNEL 15
+        void tone(uint8_t pin, unsigned int frequency, unsigned long duration = 0);
+        void noTone(uint8_t pin);
+    #endif
+
 };
 
 
