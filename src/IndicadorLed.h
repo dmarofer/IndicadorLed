@@ -71,6 +71,7 @@ public:
     }EstadoLed, EstadoLedCiclos;
 
     // Constructores (Sin Buzzer o con Buzzer)
+    IndicadorLed();
     IndicadorLed(int l_pin, bool l_Invertir);
     IndicadorLed(int l_pin, bool l_Invertir, int l_pinBuzzer);
     // Destuctor
