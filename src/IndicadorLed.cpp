@@ -1,6 +1,10 @@
 #include <IndicadorLed.h>
 #include "Arduino.h"
 
+IndicadorLed::IndicadorLed(){
+    
+}
+
 IndicadorLed::IndicadorLed(int l_pin, bool l_Invertir){
 
     this->pin=l_pin;
